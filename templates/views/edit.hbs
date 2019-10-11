@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Bands</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+#h3{
+  text-align: center
+}
+body{
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); 
+}
+</style>
+<body>
+     <h3 id="h3">Hello {{band.email}}</h3><br>
+  <center>
+  <form name="band" class="form-hozizontal"method="post" action="/modify/{{band.id}}">
+  <div class="form-group">
+      <label  class="control-label col-sm-4" for="bandname">Band Name:</label>
+      <div class="col-sm-5">
+  <input type="text" id="name" name="bandname"class="form-control input-normal" value={{band.title}} placeholder="Band Name">
+      </div>
+    </div><br><br>
+    <div class="form-group">
+      <label  class="control-label col-sm-4" for="bandinfo">Band Description:</label>
+      <div class="col-sm-5">
+  <input type="text" id="info" name="bandinfo"class="form-control input-normal" value={{band.description}} placeholder="Band Descripton">
+      </div>
+    </div>
+    <br><br>
+    <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+
+</body>
+</html>

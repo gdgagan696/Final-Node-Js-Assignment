@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+   <style>
+    .avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+body{
+ background-image: linear-gradient(to right, rgba(255, 0, 157, 0.459), rgba(229, 255, 0, 0.555));
+}
+  }
+   </style>
+</head>
+<body>
+  <h3 style="text-align: left">Hello {{name}}</h3>
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+      <img src="https://icon-library.net/images/avatar-icon-png/avatar-icon-png-8.jpg"
+      alt="Avatar" class="avatar">
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="\userdetails">Profile</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="\logout">Logout</a></li>
+    </ul>
+  </div>
+  <center>
+    <h3 style="text-align: center">Add Your Bands:</h3>
+  <form name="band" method="post" action="/add">
+    <div class="form-group">
+      <label  class="control-label col-sm-4" for="bandname">Band Name:</label>
+      <div class="col-sm-5">
+  <input type="text" id="name" name="bandname"class="form-control input-normal" placeholder="Band Name">
+      </div>
+    </div><br><br>
+      <div class="form-group">
+      <label  class="control-label col-sm-4" for="bandinfo">Band Description:</label>
+      <div class="col-sm-5">
+  <input type="text" id="info" name="bandinfo"class="form-control input-normal" placeholder="Band Descripton">
+      </div>
+    </div>
+    <br>
+    <button type="submit" name="submit" class="btn btn-primary">Add</button>
+  </form>
+  <br>
+  <h3 style="text-align: center">Your Favourite Bands</h3>
+   <table class="table">
+      <thead>
+        <tr class="success">
+            <th>Band Title</th>
+            <th>Band Info</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+     </thead>
+         {{#each bands as |band|}}
+        <tr  class="info">
+            <td>{{band.title}}</th>
+            <td>{{band.description}}</td>
+            <td>
+                 <a href="/edit/{{band.id}}" >EDIT📝</a>
+            </td>
+            <td>
+                 <a href="/delete/{{band.id}}" >DELETE❌</a>
+            </td>
+        </tr>
+         {{/each}}
+    </table>
+     </center>
+</body>
+</html>

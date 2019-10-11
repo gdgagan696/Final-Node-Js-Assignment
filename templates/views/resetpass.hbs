@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>New Password</title>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    #h1{
+        text-align: center
+    }
+    body{
+ background-image: linear-gradient(90deg, red, yellow)
+  }
+</style>
+<body>
+  <div class="container"></div>
+      <h1 id="h1">Enter New Password</h1>
+      <br>
+<form class="form-horizontal" action="/verifypwd" method="POST">
+<div class="form-group"><label class="control-label col-sm-5" for="otp">New Password:</label>
+<div class="col-sm-2">
+<input class="form-control input-normal" name="newpass" required="" type="password"autofocus="" />
+</div>
+</div>
+<div class="form-group">  
+    <div class="col-sm-offset-1 col-sm-6">
+  <input type="submit"value="Reset Password"class="btn btn-primary col-sm-offset-9">
+</div>
+</div>
+<body>
+</html>

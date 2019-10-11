@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LoginPage</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+body{
+background-image: radial-gradient(red, yellow, green);
+}
+
+</style>
+<body>
+  <div class="container">
+    <h3 style="text-align: center">Welcome To Your Profile</h3>
+    <br>
+  <div class="container"><form class="form-horizontal" action="/register" method="POST">
+<div class="form-group"><label class="control-label col-sm-2" for="name">Name:</label>
+<div class="col-sm-5">
+    <input class="form-control input-normal" name="name" required=""type="text"autofocus="" readonly value={{uinfo.name}} /></div>
+</div>
+<div class="form-group"><label class="control-label col-sm-2" for="company">College/Company:</label>
+<div class="col-sm-5"><input class="form-control input-normal" name="company" type="text" autofocus="" readonly value={{uinfo.collcomp}} /></div>
+</div>
+<div class="form-group"><label class="control-label col-sm-2" for="dob">DOB:</label>
+<div class="col-sm-5"><input class="form-control input-normal" name="dob" required="" type="text" autofocus="" readonly value={{uinfo.dob}} /></div>
+</div>
+<div class="form-group"><label class="control-label col-sm-2" for="email">E-mail:</label>
+<div class="col-sm-5"><input class="form-control input-normal" name="email" required="" type="email" autofocus="" readonly value={{uinfo.email}} /></div>
+</div>
+  <br
+</form></div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
